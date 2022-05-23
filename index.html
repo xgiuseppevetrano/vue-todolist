@@ -21,9 +21,9 @@
         </div>
 
         <div class="new-todo">
-            <form>
-                <input type="text">
-                <button>Aggiungi</button>
+            <form @submit.prevent="addToDo()">
+                <input type="text" placeholder="Inserisci un nuovo to do" v-model="newToDo.text" required>
+                <button type="submit">Aggiungi</button>
             </form>
         </div>
     

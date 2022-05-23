@@ -35,6 +35,10 @@ const app = new Vue({
                 isDone: false,
             }
         ],
+        newToDo: {
+            text: '',
+            isDone: false,
+        }, 
     },
     methods: {
         doneToDo(index) {
@@ -42,6 +46,15 @@ const app = new Vue({
         },
         removeToDo(index) {
             this.todos.splice(index, 1)
+        },
+        addToDo() {
+            if (this.newToDo.text !== ' ') {
+                this.todos.push(this.newToDo);
+                this.newToDo = {
+                    text: '',
+                    isDone: false,
+                };
+            }
         }
     }
 });
