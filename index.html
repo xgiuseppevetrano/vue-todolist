@@ -29,7 +29,7 @@
     
         <div class="todo">
             <ul v-if="todos.length > 0">
-                <li class="todo-list" :class="{donetodo: isDone}" v-for="(todo, index) in todos">{{todo.text}}<i @click="doneToDo(index)" class="fa-solid fa-check"></i> <i class="fa-solid fa-xmark"></i></li>
+                <li class="todo-list" v-for="(todo, index) in todos"><span :class="{'done-todo': todo.isDone}">{{todo.text}}</span><i @click="doneToDo(index)" class="fa-solid fa-check"></i> <i class="fa-solid fa-xmark"></i></li>
             </ul>
             <h2 v-else>Non sono presenti to do da fare</h2>
         </div>
