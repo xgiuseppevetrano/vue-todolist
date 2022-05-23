@@ -22,7 +22,7 @@
 
         <div class="new-todo">
             <form @submit.prevent="addToDo()">
-                <input type="text" placeholder="Inserisci un nuovo to do" v-model="newToDo.text" required>
+                <input type="text" @keyup-enter="addToDo()" placeholder="Inserisci un nuovo to do" v-model="newToDo.text" required>
                 <button type="submit">Aggiungi</button>
             </form>
         </div>
