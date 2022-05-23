@@ -65,3 +65,8 @@ body {
 .done-todo {
     text-decoration: line-through;
 }
+
+.todo-list {
+    display: flex;
+    justify-content: space-between;
+}
