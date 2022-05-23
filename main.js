@@ -38,7 +38,7 @@ const app = new Vue({
         newToDo: {
             text: '',
             isDone: false,
-        }, 
+        },
     },
     methods: {
         doneToDo(index) {
