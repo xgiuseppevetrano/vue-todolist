@@ -6,3 +6,62 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/*--------------
+    COMMONS
+--------------*/
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+/*-----------
+    MAIN
+-----------*/
+.logo img {
+    width: 250px;
+}
+
+.logo, .new-todo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.new-todo button, .new-todo input {
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+.new-todo input {
+    width: 300px;
+}
+
+.new-todo button, .todo-list i {
+    cursor: pointer;
+}
+
+.todo {
+    margin: 40px 0;
+    background-color: #f3f6f6;
+    padding: 30px 20px;
+}
+
+.todo-list {
+    list-style-type: none;
+    margin-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
+}
+
+.todo-list i {
+    margin-left: 10px;
+}
+
+.donetodo {
+    text-decoration: line-through;
+}
