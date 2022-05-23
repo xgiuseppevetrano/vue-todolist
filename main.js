@@ -39,10 +39,15 @@ const app = new Vue({
             text: '',
             isDone: false,
         },
+        doneTodos: [],
     },
     methods: {
         doneToDo(index) {
             this.todos[index].isDone = !this.todos[index].isDone;
+            if (this.todos[index].isDone) {
+                this.doneTodos.push(this.todos[index]);
+                this.todos.splice(index, 1);
+            }
         },
         removeToDo(index) {
             this.todos.splice(index, 1)
@@ -55,6 +60,16 @@ const app = new Vue({
                     isDone: false,
                 };
             }
+        },
+        unDoneToDo(index) {
+            this.doneTodos[index].isDone = !this.doneTodos[index].isDone;
+            if (this.doneTodos[index].isDone) {
+                this.todos.push(this.doneTodos[index]);
+                this.doneTodos.splice(index, 1);
+            }
+        },
+        removeDoneToDo(index) {
+            this.doneTodos.splice(index, 1)
         }
     }
 });
