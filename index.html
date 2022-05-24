@@ -30,15 +30,29 @@
         <h4>Da fare</h4>
         <div class="todo">
             <ul v-if="todos.length > 0">
-                <li class="todo-list" v-for="(todo, index) in todos">{{todo.text}} <span><i @click="doneToDo(index)" class="fa-solid fa-check"></i> <i @click="removeToDo(index)" class="fa-solid fa-xmark"></i></span></li>
+                <li class="todo-list" v-for="(todo, index) in todos">
+                    <span v-if="!todo.isEditText">{{todo.text}}</span>
+                    <input v-else type="text" v-model="todo.text" @keyup.enter="editText(index)">
+                    <span>
+                        <i @click="editText(index)" class="fa-solid fa-pencil"></i>
+                        <i @click="doneToDo(index)" class="fa-solid fa-check"></i>
+                        <i @click="removeToDo(index)" class="fa-solid fa-xmark"></i>
+                    </span>
+                </li>
             </ul>
-            <h2 v-else>Non sono presenti to do da fare</h2>
+            <h3 v-else>Non sono presenti to do da fare</h3>
         </div>
         <div v-if="doneTodos.length > 0" >
             <h4>Completati</h4>
             <div class="done">
                 <ul>
-                    <li class="todo-done" v-for="(doneTodo, index) in doneTodos">{{doneTodo.text}} <span><i @click="unDoneToDo(index)" class="fa-solid fa-check"></i> <i @click="removeDoneToDo(index)" class="fa-solid fa-xmark"></i></span></li>
+                    <li class="todo-done" v-for="(doneTodo, index) in doneTodos">
+                        <span :class="{'done-todo': doneTodo.isDone}">{{doneTodo.text}}</span>
+                        <span>
+                            <i @click="unDoneToDo(index)" class="fa-solid fa-check"></i>
+                            <i @click="removeDoneToDo(index)" class="fa-solid fa-xmark"></i>
+                        </span>
+                    </li>
                 </ul>
             </div>
         </div>

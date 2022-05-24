@@ -25,19 +25,23 @@ const app = new Vue({
             {
                 text: 'Fare esercizio to do list Boolean',
                 isDone: false,
+                isEditText: false,
             },
             {
                 text: 'Allenarsi con la corda',
                 isDone: false,
+                isEditText: false,
             },
             {
                 text: 'Leggere vol.19 di attacco dei giganti',
                 isDone: false,
+                isEditText: false,
             }
         ],
         newToDo: {
             text: '',
             isDone: false,
+            isEditText: false,
         },
         doneTodos: [],
     },
@@ -60,6 +64,9 @@ const app = new Vue({
                     isDone: false,
                 };
             }
+        },
+        editText(index) {
+            this.todos[index].isEditText = !this.todos[index].isEditText;
         },
         unDoneToDo(index) {
             this.doneTodos[index].isDone = !this.doneTodos[index].isDone;
