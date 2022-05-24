@@ -69,11 +69,11 @@ const app = new Vue({
             this.todos[index].isEditText = !this.todos[index].isEditText;
         },
         unDoneToDo(index) {
-            this.doneTodos[index].isDone = !this.doneTodos[index].isDone;
             if (this.doneTodos[index].isDone) {
                 this.todos.push(this.doneTodos[index]);
                 this.doneTodos.splice(index, 1);
             }
+            this.doneTodos[index].isDone = !this.doneTodos[index].isDone;
         },
         removeDoneToDo(index) {
             this.doneTodos.splice(index, 1)
